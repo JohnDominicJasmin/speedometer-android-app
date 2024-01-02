@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".MainActivity">
+
+
+        <TextView
+            android:id="@+id/speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/digital_7_mono"
+            android:gravity="center"
+            android:text="@string/_0_km_h"
+            android:textColor="@color/white"
+            android:textSize="80sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:showDividers="middle"
+            android:divider="@drawable/divider"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/start" />
+
+
+            <Button
+                android:id="@+id/pauseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/orange"
+                android:text="@string/pause" />
+
+
+            <Button
+                android:id="@+id/stopButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/red"
+                android:text="@string/stop" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/latitude"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/longitude"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_latitude" />
+
+        <TextView
+            android:id="@+id/latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/digital_7_mono"
+            android:textColor="@color/white"
+            android:textIsSelectable="true"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_latitude"
+            app:layout_constraintStart_toEndOf="@+id/tv_latitude" />
+
+        <TextView
+            android:id="@+id/longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/digital_7_mono"
+            android:textColor="@color/white"
+            android:textIsSelectable="true"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_longitude"
+            app:layout_constraintStart_toEndOf="@+id/tv_longitude"
+            app:layout_constraintTop_toTopOf="@+id/tv_longitude" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50121653" />
+
+        <TextView
+            android:id="@+id/tv_mph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/kph"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/speed"
+            app:layout_constraintStart_toEndOf="@+id/speed"
+            app:layout_constraintTop_toTopOf="@+id/speed" />
+
+        <TextView
+            android:id="@+id/tv_topSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Top Speed:"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_longitude" />
+
+        <TextView
+            android:id="@+id/topSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/digital_7_mono"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_topSpeed"
+            app:layout_constraintStart_toEndOf="@+id/tv_topSpeed"
+            app:layout_constraintTop_toTopOf="@+id/tv_topSpeed" />
+
+
+        <TextView
+            android:id="@+id/tv_travelledDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Distance Travelled:"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_topSpeed" />
+
+
+        <TextView
+            android:id="@+id/travelledDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@id/tv_travelledDistance"
+            app:layout_constraintStart_toEndOf="@id/tv_travelledDistance"
+            app:layout_constraintTop_toTopOf="@id/tv_travelledDistance"
+
+            />
+
+
+        <TextView
+            android:id="@+id/tv_avgSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:text="Average Speed:"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_travelledDistance" />
+
+        <TextView
+            android:id="@+id/avgSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="20dp"
+            android:text="0"
+            android:textColor="@color/white"
+
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_avgSpeed"
+            app:layout_constraintStart_toEndOf="@id/tv_avgSpeed"
+            app:layout_constraintTop_toTopOf="@id/tv_avgSpeed"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_kcal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:text="Average Calories Burned:"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_avgSpeed" />
+
+        <TextView
+            android:id="@+id/kcal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="20dp"
+            android:text="0"
+            android:textColor="@color/white"
+
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_kcal"
+            app:layout_constraintStart_toEndOf="@id/tv_kcal"
+            app:layout_constraintTop_toTopOf="@id/tv_kcal"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
